@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<table class="table table-striped">
+
+  <tr scope="row">
+    <th scope="col">#</th>
+    <th scope="col">User Name</th>
+    <th scope="col">Email</th>
+  </tr>
+</table>
+    <ng-container *ngFor="let listUser of data.result">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <tr>{{listUser.username}}</tr>
+            </td>
+            <td>{{listUser.email}}</td>
+
+          </tr>
+        </tbody>
+        </table>
+    </ng-container>
+
+
