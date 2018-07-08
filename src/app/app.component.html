@@ -1,25 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<table class="table table-striped">
-
-  <tr scope="row">
-    <th scope="col">#</th>
-    <th scope="col">User Name</th>
-    <th scope="col">Email</th>
-  </tr>
-</table>
-    <ng-container *ngFor="let listUser of data.result">
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <th scope="row"></th>
-            <td>
-              <tr>{{listUser.username}}</tr>
-            </td>
-            <td>{{listUser.email}}</td>
-
-          </tr>
-        </tbody>
-        </table>
-    </ng-container>
-
-
+<kendo-pdf-export #pdf paperSize="A4" margin="2cm" [repeatHeaders]="repeatHeaders">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Alamat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listUser of data.result">
+        <td>{{listUser.username}}</td>
+        <td>{{listUser.email}}</td>
+        <td>{{listUser.alamat}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="example-config">
+    <button kendo-button (click)="pdf.saveAs('table.pdf')">
+      Save As PDF
+    </button>
+  </div>
+</kendo-pdf-export>
